@@ -102,10 +102,14 @@ DATABASES['default'].update(db_from_env)
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME':'blogapp',
-        'USER':'postgres',
-        'PASSWORD' :'7991121266',
-        'HOST':'localhost',
+        #'NAME':'blogapp',
+        'NAME':'d1etiffb1n3a8p',
+        #'USER':'postgres',
+        'USER':'rhkngrwiouovwb',
+        #'PASSWORD' :'7991121266',
+        'PASSWORD' :'60ec4da872dd7eb9466ad017d41ae26dded5e7400895502d0565b41e8241a01d',
+        #'HOST':'localhost',
+        'HOST':'ec2-52-21-136-176.compute-1.amazonaws.com',
         'POST':'5432',
 
 
