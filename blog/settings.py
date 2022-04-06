@@ -102,19 +102,21 @@ DATABASES['default'].update(db_from_env)
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        #'NAME':'blogapp',
-        'NAME':'d1etiffb1n3a8p',
-        #'USER':'postgres',
-        'USER':'rhkngrwiouovwb',
-        #'PASSWORD' :'7991121266',
-        'PASSWORD' :'60ec4da872dd7eb9466ad017d41ae26dded5e7400895502d0565b41e8241a01d',
-        #'HOST':'localhost',
-        'HOST':'ec2-52-21-136-176.compute-1.amazonaws.com',
+        'NAME':'blogapp',
+        #'NAME':'d1etiffb1n3a8p',
+        'USER':'postgres',
+        #'USER':'rhkngrwiouovwb',
+        'PASSWORD' :'7991121266',
+        #'PASSWORD' :'60ec4da872dd7eb9466ad017d41ae26dded5e7400895502d0565b41e8241a01d',
+        'HOST':'localhost',
+        #'HOST':'ec2-52-21-136-176.compute-1.amazonaws.com',
         'POST':'5432',
 
 
     }
 }
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
