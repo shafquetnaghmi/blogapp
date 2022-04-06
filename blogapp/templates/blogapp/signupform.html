@@ -1,0 +1,27 @@
+{% extends 'blogapp/base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="{% static 'blogapp/signupform.css' %}">
+<div class="signup">
+<h1>Signup</h1>
+<form action="" method="POST">
+    {% csrf_token %}
+    <!--<p>{{form.username.label_tag}}</p> -->
+    {% if form.errors %}
+    <p>Invalid details</p>
+    {% endif %}
+
+    <p>{{form.username}}</p>
+    <!-- <p>{{form.email.label_tag}}</p> -->
+    <p>{{form.email}}</p>
+    <p>{{form.password1}}</p>
+    <p>{{form.password2}}</p>
+    <label>
+        <input class="button" type="submit" name="submit" value="submit">
+    </label>
+</form>
+<p>Already have an account</p>
+<a class="a-btn" href="{% url 'blogapp:login' %}">Login</a>
+</div>
+{% endblock %}

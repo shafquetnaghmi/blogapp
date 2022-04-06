@@ -1,0 +1,33 @@
+body{
+    background-color: rgb(234, 242, 250);
+}
+
+
+.login2{
+text-align: center;
+margin: 0% 30% 0% 30%;
+background-color: white;
+padding: 5% 0% 5% 0%;
+
+}
+.name1{
+    height:2em;
+}
+.pass1,.name1{
+    margin-top:1%;
+    height:2em;
+}
+.sub1{
+    margin-top: 1%;
+    background-color: rgb(28, 109, 230);
+    color: white;
+    padding:7px 70px;
+    font-size: 16px;
+    border-radius:.5em;
+    border-color: white;
+}
+
+a:link{color:rgb(28, 109, 230)}
+a:visited{color:rgb(28, 109, 230)}
+a:hover{color:rgb(28, 109, 230)}
+a:active{color:rgb(28, 109, 230)}

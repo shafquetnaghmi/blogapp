@@ -1,0 +1,45 @@
+{% extends 'blogapp/base.html' %}
+{% load static %}
+{% load social_share %}
+{% block content %}
+
+
+<link rel="stylesheet" href="{% static 'blogapp/blogpk.css' %}">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<div>
+  <div class="cont">
+    <a href="{% url 'blogapp:author' blog.author.id %}">{{blog.author}}</a>
+    <div><small class="display-3">{{blog.created_date}}</small>
+      <h1 class="display-1">{{blog.title}} </h1>
+      <p class="display-2">{{blog.summary}}</p><br>
+      <p class="display-2">{{blog.Newpost}}</p>
+    </div>
+
+ 
+   <span> {% post_to_facebook object_or_url "share on facebook" %}
+     {% post_to_twitter " {{object.title}}. Check it out!" object_or_url "Post to Twitter" %}
+     {% send_email object.title " {{object.title}}. Check it out!" object_or_url "Share via email" %}</span>
+   </div>
+
+    <hr>
+    <form method="POST">
+      {% csrf_token %}
+      
+      {{form.comment}}
+      <input class="comment-b" type="submit" value="comment">
+    </form>
+    <div class="comments">
+      <h3>comments..</h3>
+
+      {% for comm in comments %}
+      
+      <a class="comment-user" href="{% url 'blogapp:author' comm.user.id %}">{{comm.user}}</a>
+      {{comm.comment}}
+      <br><br>
+      {% endfor %}
+
+    </div>
+
+  </div>
+  {% endblock %}

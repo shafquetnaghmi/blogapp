@@ -1,0 +1,26 @@
+
+{% include 'blogapp/home.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'blogapp/authorview.css' %}">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+{% if p == q  %}
+ {{user.email}}
+ <a href="{% url 'blogapp:change-password' %}">change password</a>
+{% endif %}
+
+<h1>{{user.username}}</h1>
+<!-- <h1>{{request.user}}</h1>-->
+{% for post in a %}
+<div >
+    <div class="container">
+      <h2 class="display-1">{{post.title}} </h2>
+      <p class="display-2">{{post.summary}}</p><br>
+      <p class="display-2">{{post.Newpost}}</p>
+      <p class="display-3">{{post.created_date}}</p>
+    </div>
+  </div><hr>
+{% endfor %}
+
+{% endblock %}

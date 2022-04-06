@@ -1,0 +1,31 @@
+body{
+   text-align: center; 
+   background-color:azure;
+}
+
+.button{
+   background-color: green; 
+   padding: 8px 59px;
+   color: white;
+   font-size: 18px;
+   font-weight:100;
+   display: flexbox;
+   margin-top:.5em;
+   text-align: center;
+   border-radius: 7px;
+}
+.a-btn{
+   background-color: rgb(34, 34, 247);
+   color: white;
+   padding: 8px 63px;
+   font-size: 16px;
+   border-radius: 4px;
+}
+.signup{
+   background-color:#42b5c9;
+   margin:0% 30% 0% 30%;
+   padding-bottom: 2%;
+   border-radius:1em;
+   box-sizing: border-box;
+
+}

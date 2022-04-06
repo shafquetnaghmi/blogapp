@@ -1,0 +1,45 @@
+
+{% include 'blogapp/home.html' %}
+{% load static %}
+{% block content %}
+
+<h1>Blog </h1>
+<hr>
+<link rel="stylesheet" href="{% static 'blogapp/blogretrieve.css' %}">
+<script src="https://kit.fontawesome.com/e5e2e864c0.js" crossorigin="anonymous"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<div>
+  {% for post in blogmodel %}
+  <div>
+
+    <div class="container">
+      <a href="{% url 'blogapp:author' post.author.id %}">{{post.author}}</a><b><br></b>
+      <a href="{% url 'blogapp:blogdata' post.id %}" class="display-1"><b>{{post.title}}</b> </a>
+      <p class="display-3">{{post.summary}} </p>
+      <small class="display-4">{{post.created_date}}</small><br> 
+      <hr>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<div class="paginaton">
+<ul class="container">
+  {% if blogmodel.has_previous %}
+  <a href="?page={{blogmodel.previous_page_number}}" class="btn page-link">prev</a>
+   {% endif %}
+  {% for page in paginator.page_range %}
+   <a href="?page={{page}}" class="btn page-link">{{page}}</a>
+  {% endfor %}
+  {% if blogmodel.has_next  %}
+     <a href="?page={{blogmodel.next_page_number}}" class="btn-5">next</a>
+
+  {% endif %}
+
+</ul>
+</div>
+
+
+    {% endblock %}

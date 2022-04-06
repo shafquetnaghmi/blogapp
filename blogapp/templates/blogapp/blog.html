@@ -1,0 +1,28 @@
+{% extends 'blogapp/base.html' %}
+{% load static %}
+{% load social_share %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'blogapp/main.css' %}">
+
+<h1>Myblog</h1>
+<!-- <P>{{form.title.label_tag}}</P>-->
+{% if user.is_authenticated %}
+<form  method="POST" action="">
+   {% csrf_token %}
+   <p>{{form.title}}</p>
+   <!--<P>{{form.Newpost.label_tag}}</p>-->
+   <p> {{form.Newpost}}</P>
+ <!--  <p>{{form.author}}</p> -->
+   <p>{{form.summary}}</p>
+   <input type="submit" value="Publish" name="submit">
+   </form>
+
+   
+{% else %}
+<a  href="{% url 'blogapp:login' %}"><button>Login</button></a>
+
+{% endif %}
+
+
+{% endblock %}
