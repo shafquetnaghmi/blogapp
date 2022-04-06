@@ -35,7 +35,7 @@ def blogview(request):
            new_form=form.save(commit=False)
            new_form.author=request.user
            new_form.save()
-           return redirect('/blogapp/blog/')
+           return redirect('/blogapp/')
         else:
            return  redirect('home')
     else:

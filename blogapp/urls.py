@@ -5,9 +5,9 @@ from django.contrib.auth import views as auth_views
 from django.urls import reverse_lazy
 app_name='blogapp'
 urlpatterns=[
-    path('',views.home,name='home'),
+    path('home/',views.home,name='home'),
     path('createblog/',views.blogview,name='blogview'),
-    path('blog/',views.blogretrieve,name='blog'),
+    path('',views.blogretrieve,name='blog'),
     path('signup/',views.signupview,name='signup'),
     path('login/',views.loginview,name='login'),
     path('logout/',views.logoutview,name='logout'),
