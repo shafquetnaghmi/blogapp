@@ -16,24 +16,30 @@
       <p class="display-2">{{blog.Newpost}}</p>
     </div>
 
- 
-   <span> {% post_to_facebook object_or_url "share on facebook" %}
-     {% post_to_twitter " {{object.title}}. Check it out!" object_or_url "Post to Twitter" %}
-     {% send_email object.title " {{object.title}}. Check it out!" object_or_url "Share via email" %}</span>
-   </div>
 
-    <hr>
+    <span> {% post_to_facebook object_or_url "share on facebook" %}
+      {% post_to_twitter " {{object.title}}. Check it out!" object_or_url "Post to Twitter" %}
+      {% send_email object.title " {{object.title}}. Check it out!" object_or_url "Share via email" %}</span>
+  </div>
+
+  <hr>
+  <div>
+    {% if request.user.is_authenticated %}
     <form method="POST">
       {% csrf_token %}
-      
+
       {{form.comment}}
       <input class="comment-b" type="submit" value="comment">
+      {% else %}
+      <P>Please <a href="{% url 'blogapp:login' %}">login</a> to add comment </P>
+
+      {% endif %}
     </form>
     <div class="comments">
       <h3>comments..</h3>
 
       {% for comm in comments %}
-      
+
       <a class="comment-user" href="{% url 'blogapp:author' comm.user.id %}">{{comm.user}}</a>
       {{comm.comment}}
       <br><br>
@@ -42,4 +48,5 @@
     </div>
 
   </div>
-  {% endblock %}
+</div>
+{% endblock %}
