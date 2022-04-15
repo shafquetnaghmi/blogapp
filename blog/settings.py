@@ -102,14 +102,14 @@ MEDIA_URL = '/media/'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        #'NAME':'blogapp',
-        'NAME':'d1etiffb1n3a8p',
-        #'USER':'postgres',
-        'USER':'rhkngrwiouovwb',
-        #'PASSWORD' :'7991121266',
-        'PASSWORD' :'60ec4da872dd7eb9466ad017d41ae26dded5e7400895502d0565b41e8241a01d',
-        #'HOST':'localhost',
-        'HOST':'ec2-52-21-136-176.compute-1.amazonaws.com',
+        
+        'NAME':'',
+        
+        'USER':'',
+        
+        'PASSWORD' :'',
+        
+        'HOST':'',
         'POST':'5432',
 
 
@@ -164,7 +164,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER ='naghmi.xyz@gmail.com'
-EMAIL_HOST_PASSWORD ='qlvjifjrqceaumqu'
+EMAIL_HOST_USER ='.xyz@gmail.com'
+EMAIL_HOST_PASSWORD =''
 
 django_heroku.settings(locals())
